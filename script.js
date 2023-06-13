@@ -38,12 +38,17 @@ function setAlarm() {
   const second = parseInt(document.getElementById('alarmSecond').value);
   const period = document.getElementById('alarmPeriod').value;
   
-    // Check if hour and minute are not entered
-    if (isNaN(hour) || isNaN(minute)) {
-      alert("Invalid time");
-      return;
-    }
-  
+  // Check if hour is not entered or exceeds 12
+  if (isNaN(hour) || hour < 0 || hour > 12) {
+    alert("Invalid hour. Please enter a value between 0 and 12.");
+    return;
+  }
+
+  // Check if minute is not entered or exceeds 60
+  if (isNaN(minute) || minute < 0 || minute > 59) {
+    alert("Invalid minute. Please enter a value between 0 and 59.");
+    return;
+  }
     // Set seconds to '00' if not entered
     const actualSecond = isNaN(second) ? 0 : second;
   
@@ -65,7 +70,7 @@ function setAlarm() {
   
   const deleteButton = document.createElement('button');
   deleteButton.classList.add('btn', 'btn-danger', 'btn-sm', 'float-right', 'ml-2');
-  deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
+  deleteButton.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
   deleteButton.addEventListener('click', function() {
     const index = alarms.indexOf(alarmTime);
     if (index > -1) {
