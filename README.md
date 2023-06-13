@@ -1,4 +1,7 @@
 # Alarm_Clock
+
+![Alarm_Clock](https://github.com/SwarupDeb/Alarm_Clock/assets/55588687/119a777f-acfb-43b0-8fbe-093d1f3a4e56)
+
 Certainly! The "Alarm_Clock" project is a JavaScript-based web application that functions as a digital alarm clock. It allows users to set multiple alarms and provides an interactive interface for managing and displaying the alarms.
 
 Here's an overview of how the project works:
